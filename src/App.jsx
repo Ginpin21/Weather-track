@@ -44,7 +44,7 @@ function App() {
   return (
     <>
         <Header/>
-        <div className={`md:flex-row ${!context.weather ? "min-h-screen items-center md:justify-center " : "items-center justify-center"} container md:items-stretch font-extralight flex flex-col p-5 dark:bg-slate-800 dark:text-slate-200` }>
+        <div className={`w-full md:flex-row ${!context.weather ? "min-h-screen items-center md:justify-center " : "items-center justify-center"} md:items-stretch font-extralight flex flex-col p-5 dark:bg-slate-800 dark:text-slate-200` }>
           <WeatherCard weatherApi={weatherApi}/>
           <WeatherForecast/>
         </div>
