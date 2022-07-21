@@ -5,3 +5,11 @@
 .btn{
     @apply sm:w-auto w-full m-2 px-5 py-3 text-slate-800  shadow-red-500 bg-green-400 rounded-lg hover:bg-black hover:text-white focus:border-gray-500 active:bg-gray-400
 }
+@layer utilities{
+    .text-shadow-black{
+        text-shadow: 1px 1px 5px black
+    }
+    .text-shadow-white{
+        text-shadow: 1px 1px 5px white
+    }
+}

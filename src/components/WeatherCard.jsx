@@ -28,15 +28,13 @@ const WeatherCard = ({ weatherApi }) => {
         context.action.changeText('')
         }}>
         <div 
-        className={context.weather ? "flex justify-center items-center shadow shadow-slate-500 max-w-full my-5 px-5 py-1 rounded-lg"
-      : "flex animate-pulse focus-within:animate-none justify-center items-center shadow shadow-slate-500 max-w-full my-5 px-5 py-1 rounded-lg"}>
+        className={`flex animate-pulse ${context.weather && "focus-within:animate-none"} justify-center items-center shadow shadow-slate-500 max-w-full my-5 px-5 py-1 rounded-lg`}>
             <input type="text" value={context.text} onChange={(e)=>context.action.changeText(e.currentTarget.value)}
              className="dark:bg-slate-800 focus:outline-none w-full mx-1" placeholder="Search for a city...." />
             <button type="submit"> <FaSearch/> </button>
         </div>
       </form>
-      {context.weather &&  <div className={context.weather.current.is_day? "p-5 grid grid-cols-6 gap-2 w-full bg-gradient-to-l from-slate-500 to-cyan-500  rounded-lg text-slate-200":
-    "p-5 grid grid-cols-6 gap-2 w-full bg-gradient-to-l from-slate-500 to-black  rounded-lg text-slate-200"}> 
+      {context.weather &&  <div className={`p-5 grid grid-cols-6  gap-2 w-full bg-gradient-to-l ${context.weather.current.is_day ? "from-slate-500 to-cyan-500" : "from-slate-500 to-black"} rounded-lg text-slate-200 text-shadow-black`}> 
           <h2 className='text-7xl col-span-3 row-start-1'>{context.celsius? context.weather.current.temp_c + "°C":context.weather.current.temp_f + "°F"}</h2>           
           <div className="md:col-span-3 md:row-start-1  md:items-end  md:font-extralight max-w-full flex flex-col col-span-full row-start-4 font-normal">
             <h2 className='md:text-2xl text-1xl'>{"Humidity: "+context.weather.current.humidity+"%"}</h2>
