@@ -20,8 +20,8 @@ const WeatherCard = ({ weatherApi }) => {
   }
 
   return (
-    <div className="md:w-half w-full m-5 p-5 shadow dark:shadow-slate-200 shadow-slate-500 rounded-md flex flex-col justify-center items-center">
-      <form action="" className="container"
+    <div className={`md:w-half ${!context.weather && "h-fit" }  w-full m-5 p-5 shadow dark:shadow-slate-200 shadow-slate-500 rounded-md flex flex-col justify-center items-center`}>
+      <form action="" className="container "
       onSubmit={(e)=>{
         e.preventDefault()
         api()
